@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Shop Amazon" parallel="tests" verbose="1"
+       thread-count="10">
+
+    <test name="SearchProduct">
+<!--        <parameter name="User1" value="Test-android-local-iPhone,SMP.UserGroup1.User1,v7_3-v7_4"/>-->
+        <classes>
+            <class name="test.main.ShoppingTest"/>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,40 @@
+{
+  "Test": [
+    {
+      "android": [
+        {
+          "local": [
+            {
+              "deviceName": "moto",
+              "udid": "ZX1G523V28",
+              "deviceType": "mobile",
+              "deviceOS": "android",
+              "platform": "VOM",
+              "osVersion": "8.0",
+              "tool": "appium",
+              "provider": "localDevice",
+              "phoneNumber": "1234567890",
+              "appType": "native",
+              "appToTest": "com.amazon.mShop.android.shopping :: com.amazon.mShop.search.MShopWebSearchActivity"
+            }
+          ],
+          "cloud": [
+            {
+              "deviceName": "samsungA50",
+              "udid": "RZ8M50E57GD",
+              "deviceType": "mobile",
+              "deviceOS": "android",
+              "platform": "VOM",
+              "osVersion": "8.0",
+              "tool": "appium",
+              "provider": "localDevice",
+              "phoneNumber": "1234567890",
+              "appType": "native",
+              "appToTest": "com.rak :: com.rak.MainActivity"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
