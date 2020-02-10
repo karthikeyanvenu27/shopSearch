@@ -31,8 +31,6 @@ public class BasePage {
     @BeforeTest
     public void setUp() {
 
-//        datafile.
-
         try {
 
 //            mapProp = new DataRepository(System.getProperty("user.dir")+"/src/test/resources/objectRepository/android/androidObjects.properties");
