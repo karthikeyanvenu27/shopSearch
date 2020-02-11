@@ -2,7 +2,7 @@ package pages;
 
 import io.appium.java_client.AppiumDriver;
 import tests.CommonPage;
-import utils.DataRepository;
+import test.main.utils.DataRepository;
 import tests.BasePage;
 
 public class AmazonHomePage extends BasePage {

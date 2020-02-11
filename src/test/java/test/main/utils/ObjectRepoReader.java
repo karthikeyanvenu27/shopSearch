@@ -1,4 +1,4 @@
-package utils;
+package test.main.utils;
 
 import java.util.Properties;
 
@@ -6,7 +6,7 @@ public class ObjectRepoReader {
     private String keyValue;
     private Properties propertyFile;
 
-//    public utils.ObjectRepoReader(utils.ObjectRepoReader.Builder builder) {
+//    public test.main.utils.ObjectRepoReader(test.main.utils.ObjectRepoReader.Builder builder) {
 //        ConfigReader configReader = new ConfigReader();
 //        configReader.loadProperty(builder.propertyFileName);
 //        this.keyValue = configReader.readPropertiesFile(builder.keyName);
@@ -33,8 +33,8 @@ public class ObjectRepoReader {
             return this;
         }
 
-//        public utils.ObjectRepoReader build() {
-//            return new utils.ObjectRepoReader(this);
+//        public test.main.utils.ObjectRepoReader build() {
+//            return new test.main.utils.ObjectRepoReader(this);
 //        }
     }
 }

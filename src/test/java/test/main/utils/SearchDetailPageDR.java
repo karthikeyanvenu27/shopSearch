@@ -1,6 +1,4 @@
-package utils;
-
-import java.util.List;
+package test.main.utils;
 
 public class SearchDetailPageDR {
     private static String productName;

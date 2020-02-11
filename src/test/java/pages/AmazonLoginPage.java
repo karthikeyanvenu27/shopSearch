@@ -2,8 +2,7 @@ package pages;
 
 import io.appium.java_client.AppiumDriver;
 import org.testng.Assert;
-import tests.BasePage;
-import utils.DataRepository;
+import test.main.utils.DataRepository;
 import tests.CommonPage;
 
 public class AmazonLoginPage extends DataRepository{

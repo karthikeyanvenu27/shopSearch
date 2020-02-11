@@ -1,9 +1,7 @@
-package utils;
+package test.main.utils;
 
 import org.openqa.selenium.By;
-
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -14,11 +12,10 @@ public class DataRepository {
     public DataRepository() {
 
         try {
-                String file = System.getProperty("user.dir")+"/src/test/resources/objectRepository/android/androidObjects.properties";
+            String file = System.getProperty("user.dir")+"/src/test/resources/objectRepository/android/androidObjects.properties";
             FileInputStream locator = new FileInputStream(file);
             properties = new Properties();
             properties.load(locator);
-            System.out.println("DataRepo111"+ properties.getProperty("welcomeScreen.skipSignInBtn"));
         } catch (IOException e) {
             e.getMessage();
             e.printStackTrace();

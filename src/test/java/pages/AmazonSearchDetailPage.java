@@ -3,8 +3,8 @@ package pages;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
 import tests.CommonPage;
-import utils.DataRepository;
-import utils.SearchDetailPageDR;
+import test.main.utils.DataRepository;
+import test.main.utils.SearchDetailPageDR;
 import org.testng.Assert;
 
 import java.util.concurrent.TimeUnit;

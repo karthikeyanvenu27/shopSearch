@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import tests.CommonPage;
-import utils.DataRepository;
+import test.main.utils.DataRepository;
 import tests.BasePage;
 
 public class AmazonSettingsPage extends BasePage {
@@ -18,7 +18,7 @@ public class AmazonSettingsPage extends BasePage {
 
     // This method is to set Email in the email text box
     public void selectSettingsOption() throws Exception {
-        commonPage.horizontalSwipeByPercentage(10,20,40);
+        commonPage.verticalSwipeByPercentages(10,20,40);
         driver.findElement(data.getLocator("hamburgerScreen.settingsOptions")).click();
     }
 
