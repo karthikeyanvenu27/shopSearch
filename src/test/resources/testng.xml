@@ -2,9 +2,9 @@
 <suite name="Shop Amazon" parallel="tests" verbose="1"
        thread-count="10">
 
-<!--    <listeners>-->
-<!--        <listener class-name="test.main.TestListener"/>-->
-<!--    </listeners>-->
+    <listeners>
+        <listener class-name="test.main.TestListener"/>
+    </listeners>
 
     <test name="SearchProduct">
 <!--        <parameter name="User1" value="Test-android-local-iPhone,SMP.UserGroup1.User1,v7_3-v7_4"/>-->

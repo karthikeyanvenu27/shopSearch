@@ -1,19 +1,20 @@
 package pages;
 
-import io.appium.java_client.AppiumDriver;
 import org.testng.Assert;
-import tests.CommonPage;
 import test.main.utils.DataRepository;
 import test.main.utils.SearchDetailPageDR;
 
-public class AmazonCheckoutPage {
-    AppiumDriver driver;
-    CommonPage commonPage;
-    DataRepository data;
+import java.util.concurrent.TimeUnit;
+
+public class AmazonCheckoutPage extends BasePage {
+
+    DataRepository data = new DataRepository();
+    CommonPage commonPage = new CommonPage();
 
     // This method to verify Title
     public void verifyTitle() throws Exception {
-        driver.findElement(data.getLocator("checkout.title")).isDisplayed();
+        getDriver().manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
+        getDriver().findElement(data.getLocator("checkout.title")).isDisplayed();
     }
 
     // gets searched Product Detail

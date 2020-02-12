@@ -1,26 +1,31 @@
 package pages;
 
 import io.appium.java_client.AppiumDriver;
-import tests.CommonPage;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import test.main.utils.DataRepository;
-import tests.BasePage;
 
-public class AmazonHomePage extends BasePage {
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
-    AppiumDriver driver;
-    CommonPage commonPage;
-    DataRepository data;
+public class AmazonHomePage  extends BasePage {
 
-    // Defining all the user actions (Methods) that can be performed in the Facebook home page
+    DataRepository data = new DataRepository();
+    CommonPage commonPage = new CommonPage();
+    Actions action;
+
+    // Defining all the user actions (Methods) that can be performed in the home page
 
     // This method to verify Title
     public void verifyTitle() throws Exception {
-        driver.findElement(data.getLocator("homeScreen.logoImg")).isDisplayed();
+        getDriver().findElement(data.getLocator("homeScreen.logoImg")).isDisplayed();
     }
 
     // This method is to search for a product from searchBar
     public void searchProduct(String product) throws Exception {
-        driver.findElement(data.getLocator("homeScreen.searchBar")).sendKeys(product);
-        commonPage.click("homeScreen.searchBarBtn");
+        getDriver().findElement(data.getLocator("homeScreen.searchBar")).sendKeys(product);
+        action =new Actions(getDriver());
+        action.sendKeys(Keys.ENTER).perform();
     }
 }

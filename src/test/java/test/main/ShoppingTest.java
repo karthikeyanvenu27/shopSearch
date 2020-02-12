@@ -1,11 +1,7 @@
 package test.main;
 
 import org.testng.annotations.Test;
-import pages.AmazonCheckoutPage;
-import pages.AmazonHomePage;
-import pages.AmazonLoginPage;
-import pages.AmazonSearchDetailPage;
-import tests.BasePage;
+import pages.*;
 
 public class ShoppingTest extends BasePage {
 

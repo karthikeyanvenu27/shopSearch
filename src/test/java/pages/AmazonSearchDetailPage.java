@@ -1,50 +1,47 @@
 package pages;
 
-import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
-import tests.CommonPage;
 import test.main.utils.DataRepository;
 import test.main.utils.SearchDetailPageDR;
 import org.testng.Assert;
 
 import java.util.concurrent.TimeUnit;
 
-public class AmazonSearchDetailPage {
-    AppiumDriver driver;
-    CommonPage commonPage;
-    DataRepository data;
+public class AmazonSearchDetailPage extends BasePage {
+
+    DataRepository data = new DataRepository();
+    CommonPage commonPage = new CommonPage();
 
     public void selectProduct() throws Exception {
-        commonPage.click("homeScreen.searchBarBtn");
+        commonPage.verticalSwipeByPercentages( );
+        commonPage.click("prp.product");
     }
 
     // This method to verify Title
     public void verifyTitle() throws Exception {
-        driver.findElement(data.getLocator("pdp.title")).isDisplayed();
+        getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        getDriver().findElement(data.getLocator("prp.title")).isDisplayed();
     }
 
     // gets searched Product Detail
     public void getSearchedProductsDetails() throws Exception {
 
-        // First search the product to select and
-            while (!commonPage.verifyElementFound("prp.product")){
-                commonPage.verticalSwipeByPercentages( 200,300,20);
-                Assert.assertTrue(commonPage.verifyElementFound("prp.product"),
-                        "Product Not Found");
-            }
-        commonPage.click("prp.product");
-
-        driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+        getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         //Store the Desc/Price Name of the product to compare with the value from Check out Page
-        WebElement prdDesc = driver.findElement(data.getLocator("prp.desc"));
-        SearchDetailPageDR.setProductDesc(prdDesc.getText());
 
-        WebElement prdPrice = driver.findElement(data.getLocator("prp.price"));
+        getDriver().findElement(data.getLocator("prp.title")).isDisplayed();
+
+        commonPage.verticalSwipeByPercentages();
+
+        WebElement prdPrice = getDriver().findElement(data.getLocator("pdp.price"));
         SearchDetailPageDR.setProductPrice(prdPrice.getText());
+        System.out.println("prdDesc.prdPrice()"+prdPrice.getText());
+        getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 
-        WebElement prdName = driver.findElement(data.getLocator("prp.name"));
-        SearchDetailPageDR.setProductName(prdName.getText());
+//        commonPage.verticalSwipeByPercentages();
+//        getDriver().findElement(data.getLocator("pdp.addToCartBtn")).click();
 
+        getDriver().findElement(data.getLocator("pdp.cart")).click();
     }
 }

@@ -1,4 +1,4 @@
-package tests;
+package pages;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
@@ -7,8 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-
-
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
@@ -19,7 +17,11 @@ import java.util.concurrent.TimeUnit;
  */
 public class BasePage {
 
-    public AppiumDriver<WebElement> driver;
+    public static AppiumDriver<WebElement> driver;
+
+    public AppiumDriver<WebElement> getDriver() {
+        return driver;
+    }
 
     @BeforeTest
     public void setUp() {
@@ -33,9 +35,9 @@ public class BasePage {
             capabilities.setCapability("autoWebview", "false");
             capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 1000);
             capabilities.setCapability("appPackage", "com.amazon.mShop.android.shopping");
-            capabilities.setCapability("appActivity", "com.amazon.mShop.sso.SigninPromptActivity");
+            capabilities.setCapability("appActivity", "com.amazon.mShop.splashscreen.StartupActivity");
 
-//            capabilities.setCapability("appPackage", "com.amazon.mShop.android.shopping");
+//            capabilities.setCapability("appPackage", "com.amazon.mShop.android.shopping/com.amazon.mShop.splashscreen.StartupActivity");
 //            capabilities.setCapability("appActivity", "com.amazon.mShop.home.web.MShopWebGatewayActivity");
 
             URL url = new URL("http://0.0.0.0:4723/wd/hub");
@@ -43,7 +45,7 @@ public class BasePage {
             driver = new AndroidDriver<>(url, capabilities);
             System.out.println("App launched");
             driver.launchApp();
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         }catch (Exception e) {
                 e.printStackTrace();
