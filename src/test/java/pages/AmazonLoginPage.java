@@ -20,8 +20,5 @@ public class AmazonLoginPage extends BasePage {
         // Assert Title is check if SignIn screen is loaded
         public void verifyTitle() throws Exception {
             System.out.println("getLocator: $#@#$%"+ data.getLocator("welcomeScreen.welcomeTitle"));
-//            Assert.assertEquals(getDriver().findElement(data.getLocator("welcomeScreen.welcomeTitle")).getText(),
-//                    "Not the account you want to use?", "Not the account you want to use?");
         }
-
 }

@@ -37,9 +37,6 @@ public class BasePage {
             capabilities.setCapability("appPackage", "com.amazon.mShop.android.shopping");
             capabilities.setCapability("appActivity", "com.amazon.mShop.splashscreen.StartupActivity");
 
-//            capabilities.setCapability("appPackage", "com.amazon.mShop.android.shopping/com.amazon.mShop.splashscreen.StartupActivity");
-//            capabilities.setCapability("appActivity", "com.amazon.mShop.home.web.MShopWebGatewayActivity");
-
             URL url = new URL("http://0.0.0.0:4723/wd/hub");
 
             driver = new AndroidDriver<>(url, capabilities);
@@ -48,13 +45,12 @@ public class BasePage {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         }catch (Exception e) {
-                e.printStackTrace();
+            e.printStackTrace();
         }
     }
 
     @AfterTest
     public void tearDown() {
-//        driver.close();
         driver.quit();
     }
 }

@@ -1,5 +1,6 @@
 package test.main;
 
+import com.aventstack.extentreports.Status;
 import org.testng.annotations.Test;
 import pages.*;
 
@@ -8,12 +9,13 @@ public class ShoppingTest extends BasePage {
      AmazonLoginPage loginPage= new AmazonLoginPage();
      AmazonHomePage homePage = new AmazonHomePage();
      AmazonSearchDetailPage search = new AmazonSearchDetailPage();
-     AmazonCheckoutPage checkout = new AmazonCheckoutPage();
+     AmazonCartPage checkout = new AmazonCartPage();
 
     //test() method searches a product and verifies product name /desc/price in pdp page and checkout page
     @Test()
     public void test() {
         try {
+            Reporter.getTest().log(Status.INFO, "Test execution started ");
             loginPage.verifyTitle();
             loginPage.clickSkipSignInButton();
             homePage.verifyTitle();
@@ -27,5 +29,4 @@ public class ShoppingTest extends BasePage {
             e.printStackTrace();
         }
     }
-
 }

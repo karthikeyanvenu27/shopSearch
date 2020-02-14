@@ -22,7 +22,6 @@ public class DataRepository {
             e.printStackTrace();
             e.getCause();
         }
-
     }
 
     public String getData(String ElementName) throws Exception {
@@ -34,10 +33,9 @@ public class DataRepository {
     public By getLocator(String ElementName) throws Exception {
         // Read value using the logical name as Key
         String locator = properties.getProperty(ElementName);
-        System.out.println("Locator---"+ locator);
+
         // Split the value which contains locator type and locator value
         String locatorType = locator.split("=")[0];
-        System.out.println("locatorType---"+ locatorType);
         String locatorValue = locator.split("=")[1];
         // Return a instance of By class based on type of locator
         if (locatorType.toLowerCase().equals("id"))

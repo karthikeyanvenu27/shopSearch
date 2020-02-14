@@ -1,13 +1,8 @@
 package pages;
 
-import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import test.main.utils.DataRepository;
-
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 public class AmazonHomePage  extends BasePage {
 
